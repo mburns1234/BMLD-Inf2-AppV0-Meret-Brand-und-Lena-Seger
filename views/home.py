@@ -9,10 +9,9 @@ Diese App wurde von folgenden Personen entwickelt:
 - Meret Brand (brandmer@students.zhaw.ch)
 - Lena Seger (segerlen@students.zhaw.ch)
 
-Diese App ist das leere Gerüst für die App-Entwicklung im Modul Informatik 2 (BMLD/ZHAW)
-Der ECTS‑Notenrechner ermöglicht es, den persönlichen Notendurchschnitt einer Modulgruppe zu berechnen.  \
-Dazu werden für jedes Fach die erzielte Note und die entsprechende ECTS‑Gewichtung eingetragen. \
-Aus diesen Angaben wird automatisch der gewichtete Durchschnitt ermittelt, sodass auf einen Blick ersichtlich ist, ob die Modulgruppe bestanden wurde oder nicht.
+Diese App hilft dabei, dein ungefähres Idealgewicht zu berechnen. 
+Dazu wird die Broca-Formel (Körpergröße in cm − 100) verwendet. 
+Die Berechnung liefert einen Richtwert, um die persönliche Gewichtsspanne einzuschätzen.
 
 Autoren: Meret Brand (brandmer@students.zhaw.ch), Lena Seger (segerlen@students.zhaw.ch)
 """
