@@ -10,7 +10,7 @@ Diese App wurde von folgenden Personen entwickelt:
 - Lena Seger (segerlen@students.zhaw.ch)
 
 Diese App hilft dabei, dein ungefähres Idealgewicht zu berechnen. 
-Dazu wird die Broca-Formel (Körpergröße in cm − 100) verwendet. 
+Dazu wird die Broca-Formel (Körpergrösse in cm − 100) verwendet. 
 Die Berechnung liefert einen Richtwert, um die persönliche Gewichtsspanne einzuschätzen.
 
 Autoren: Meret Brand (brandmer@students.zhaw.ch), Lena Seger (segerlen@students.zhaw.ch)
