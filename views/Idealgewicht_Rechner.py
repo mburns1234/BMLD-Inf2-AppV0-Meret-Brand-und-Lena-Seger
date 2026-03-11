@@ -1,4 +1,6 @@
 import streamlit as st
+from functions.idealgewichtrechner import idealgewicht_rechnen
+import pandas as pd
 
 st.set_page_config(page_title="Idealgewicht Rechner", page_icon="⚖️")
 
@@ -35,12 +37,11 @@ if submitted:
     if not info:
         st.warning("Bitte bestätige zuerst die Checkbox.")
     else:
-        idealgewicht = height - 100
+        idealgewicht = idealgewicht_rechnen(height)
 
         st.success(f"{name}, dein Idealgewicht beträgt {idealgewicht:.1f} kg")
 
         differenz = weight - idealgewicht
-
         st.metric("Abweichung vom Idealgewicht", f"{differenz:.1f} kg")
 
         if differenz > 0:
@@ -51,6 +52,19 @@ if submitted:
             st.balloons()
 
         st.progress(min(int(abs(differenz) * 5), 100))
-
         st.caption("Hinweis: Die Broca-Formel ist eine sehr vereinfachte Methode.")
-        
+
+       # Verlauf speichern – mit mehreren Spalten
+        st.session_state["data_df"] = pd.concat(
+            [st.session_state["data_df"],
+            pd.DataFrame([{
+            "Name": name,
+            "Größe (cm)": height,
+            "Gewicht (kg)": weight,
+            "Idealgewicht (kg)": idealgewicht,
+            "Differenz (kg)": differenz
+            }])], ignore_index=True)
+
+# Verlauf anzeigen
+df_anzeige = st.session_state["data_df"].copy()
+st.dataframe(df_anzeige)
