@@ -1,6 +1,7 @@
 import streamlit as st
 from functions.idealgewichtrechner import idealgewicht_rechnen
 import pandas as pd
+from utils.data_manager import DataManager  # --- NEW CODE: import data manager ---
 
 st.set_page_config(page_title="Idealgewicht Rechner", page_icon="⚖️")
 
