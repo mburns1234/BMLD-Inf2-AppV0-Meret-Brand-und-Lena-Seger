@@ -76,3 +76,23 @@ if submitted:
 
 #st.dataframe(df_anzeige)
 st.dataframe(st.session_state["data_df"])
+
+# Tabelle anzeigen
+st.dataframe(st.session_state["data_df"])
+
+# --- NEU: Grafik ---
+if not st.session_state["data_df"].empty:
+
+    df = st.session_state["data_df"].copy()
+
+    # Index setzen (wichtig für Verlauf)
+    df["Index"] = range(len(df))
+
+    st.subheader("📊 Verlauf deiner Werte")
+
+    st.line_chart(
+        df.set_index("Index")[["Gewicht (kg)", "Idealgewicht (kg)"]]
+    )
+
+else:
+    st.info("Noch keine Daten für eine Grafik vorhanden")
