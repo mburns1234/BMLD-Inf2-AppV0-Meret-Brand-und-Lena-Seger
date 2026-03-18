@@ -66,12 +66,13 @@ if submitted:
             "Differenz (kg)": differenz
             }])], ignore_index=True)
 
-# Verlauf anzeigen
-df_anzeige = st.session_state["data_df"].copy()
+    # Verlauf anzeigen
+    df_anzeige = st.session_state["data_df"].copy()
 
-# --- CODE UPDATE: save data to data manager ---
-data_manager = DataManager()
-data_manager.save_user_data(st.session_state['data_df'], 'data.csv')
-    # --- END OF CODE UPDATE ---
+    # --- CODE UPDATE: save data to data manager ---
+    data_manager = DataManager()
+    data_manager.save_user_data(st.session_state['data_df'], 'data.csv')
+        # --- END OF CODE UPDATE ---
 
-st.dataframe(df_anzeige)
+#st.dataframe(df_anzeige)
+st.dataframe(st.session_state["data_df"])
